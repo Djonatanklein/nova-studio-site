@@ -1,0 +1,736 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: "Rajdhani", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* Evita que o header sticky cubra as seções */
+#inicio,
+#servicos,
+#projetos,
+#contato {
+    scroll-margin-top: 120px;
+}
+
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #161616;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+nav p {
+    margin: 0;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav p span {
+    color: #00aeff;
+}
+
+nav ul {
+    display: flex;
+
+    gap: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+nav a {
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00aeff;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #00aeff;
+
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Link da seção atual */
+
+nav a.ativo-menu {
+    color: #00aeff;
+}
+
+nav a.ativo-menu::after {
+    width: 100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 40px;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(0, 174, 255, 0.15),
+            transparent 35%
+        );
+
+    background-size:
+        40px 40px,
+        40px 40px,
+        auto;
+}
+
+.hero h1 {
+    max-width: 700px;
+
+    margin-bottom: 20px;
+
+    font-size: 56px;
+}
+
+.hero h1 span {
+    color: #00aeff;
+}
+
+.hero p {
+    max-width: 650px;
+
+    color: #b5b5b5;
+
+    font-size: 20px;
+}
+
+.hero > a {
+    width: fit-content;
+
+    margin-top: 20px;
+    padding: 12px 24px;
+
+    background-color: #00aeff;
+    color: black;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.hero > a:hover {
+    background-color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   VISUAL DO HERO
+========================= */
+
+.hero-visual {
+    position: absolute;
+
+    right: 8%;
+    top: 50%;
+
+    width: 360px;
+    height: 230px;
+
+    transform:
+        translateY(-50%)
+        rotate(1deg);
+
+    background-color: rgba(10, 10, 10, 0.8);
+
+    border: 1px solid #222;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 174, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+.hero-visual:hover {
+    transform:
+        translateY(-50%)
+        rotate(0deg)
+        scale(1.02);
+
+    border-color: #00aeff;
+}
+
+.visual-top {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border-bottom: 1px solid #222;
+}
+
+.visual-top span {
+    width: 7px;
+    height: 7px;
+
+    background-color: #333;
+
+    border-radius: 50%;
+}
+
+.visual-content {
+    padding: 35px;
+}
+
+.visual-line {
+    height: 8px;
+
+    margin-bottom: 12px;
+
+    background-color: #222;
+}
+
+.visual-line.grande {
+    width: 80%;
+}
+
+.visual-line.media {
+    width: 60%;
+}
+
+.visual-line.pequena {
+    width: 45%;
+}
+
+.visual-button {
+    width: 90px;
+    height: 28px;
+
+    margin-top: 25px;
+
+    background-color: #00aeff;
+}
+
+
+/* =========================
+   TÍTULOS DAS SEÇÕES
+========================= */
+
+.section-title {
+    position: relative;
+
+    width: fit-content;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 32px;
+}
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 40px;
+    height: 3px;
+
+    margin-top: 8px;
+
+    background-color: #00aeff;
+}
+
+.section-intro,
+.projetos-intro {
+    max-width: 650px;
+
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+    color: #b5b5b5;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+#servicos {
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px;
+
+    background-color: #080808;
+}
+
+.servicos-container {
+    display: flex;
+
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #0a0a0a
+        );
+
+    border: 1px solid #222;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #00aeff;
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 174, 255, 0.12);
+}
+
+.card h3 {
+    margin-top: 0;
+
+    color: #00aeff;
+
+    font-size: 24px;
+}
+
+.card p {
+    color: #b5b5b5;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROJETOS
+========================= */
+
+#projetos {
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px;
+}
+
+.projetos-container {
+    display: flex;
+
+    gap: 20px;
+}
+
+.projeto-card {
+    width: 100%;
+    max-width: 750px;
+
+    padding: 30px;
+
+    background-color: #111;
+
+    border: 1px solid #222;
+
+    transition: 0.3s;
+}
+
+.projeto-card:hover {
+    border-color: #00aeff;
+
+    transform: translateY(-5px);
+}
+
+.projeto-card h3 {
+    margin: 10px 0;
+
+    font-size: 28px;
+}
+
+.projeto-status {
+    color: #00aeff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* Preview */
+
+.projeto-preview {
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #222;
+}
+
+.projeto-preview img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    transition: 0.3s;
+}
+
+.projeto-link {
+    display: block;
+}
+
+.projeto-link:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Botão */
+
+.projeto-botao {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 10px 20px;
+
+    background-color: #00aeff;
+    color: black;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.projeto-botao:hover {
+    background-color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+#contato {
+    padding: 100px 40px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0, 174, 255, 0.10),
+            transparent 40%
+        );
+}
+
+#contato h2 {
+    margin-bottom: 20px;
+
+    font-size: 42px;
+}
+
+#contato p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: #b5b5b5;
+
+    font-size: 20px;
+}
+
+#contato a {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background-color: #00aeff;
+    color: black;
+
+    border: 1px solid #00aeff;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+#contato a:hover {
+    background-color: transparent;
+    color: #00aeff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px 40px;
+
+    border-top: 1px solid #222;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ANIMAÇÃO AO ROLAR
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.ativo {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TABLETS / TELAS MENORES
+========================= */
+
+@media (max-width: 1100px) {
+
+    .hero-visual {
+        right: 4%;
+
+        width: 310px;
+        height: 210px;
+    }
+
+    .hero h1 {
+        max-width: 550px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+
+    /* HEADER */
+
+    nav {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 15px;
+
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 70vh;
+
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+
+    /* SEÇÕES */
+
+    #servicos,
+    #projetos {
+        padding: 70px 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-intro,
+    .projetos-intro {
+        font-size: 17px;
+    }
+
+
+    /* SERVIÇOS */
+
+    .servicos-container {
+        flex-direction: column;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+
+    /* PROJETOS */
+
+    .projetos-container {
+        flex-direction: column;
+    }
+
+    .projeto-card {
+        max-width: 100%;
+
+        padding: 25px;
+    }
+
+
+    /* CONTATO */
+
+    #contato {
+        padding:
+            55px
+            20px
+            70px;
+    }
+
+    #contato h2 {
+        font-size: 34px;
+    }
+
+    #contato p {
+        font-size: 18px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 25px 20px;
+    }
+}
